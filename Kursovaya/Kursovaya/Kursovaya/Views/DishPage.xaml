@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kursovaya.Views.DishPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="18">
+                <Label Text="{Binding Name}"
+                       FontSize="Title"/>
+                
+                <Image x:Name="image"
+                       HorizontalOptions="Center"
+                       WidthRequest="512"
+                       HeightRequest="512"/>
+
+                <Grid ColumnDefinitions="*,*">
+                    <Label Text="Price"
+                            FontSize="Large"/>
+
+                    <Label Grid.Column="2"
+                            Text="{Binding Price}"
+                            FontSize="Medium"/>
+
+                    <Label Grid.Row="1"
+                           Text="Weight"
+                           FontSize="Large"/>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="2"
+                           Text="{Binding Weight}"
+                           FontSize="Medium"/>
+                    
+                    <Label Grid.Row="2"
+                           Text="Calories"
+                           FontSize="Large"/>
+
+                    <Label Grid.Row="2"
+                           Grid.Column="2"
+                           Text="{Binding Calories}"
+                           FontSize="Medium"/>
+
+                    <Button Text="Ingredients"
+                            Grid.Row="3"
+                            Grid.ColumnSpan="3"
+                            Clicked="IngredientsClicked"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

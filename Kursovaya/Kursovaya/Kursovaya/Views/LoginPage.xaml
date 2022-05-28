@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kursovaya.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Enter login and password" 
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Large"/>
+            <Entry x:Name="login"
+                   WidthRequest="256"
+                   Placeholder="LOGIN"
+                   HorizontalOptions="Center"/>
+            <Entry x:Name="password"
+                   WidthRequest="256"
+                   Placeholder="PASSWORD"
+                   IsPassword="True"
+                   HorizontalOptions="Center"/>
+            <Button Clicked="LoginClicked"
+                    Text="LOG IN"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

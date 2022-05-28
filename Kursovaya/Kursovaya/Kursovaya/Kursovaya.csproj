@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="FFDB.db" />
+    <None Remove="Images\Burger King_Chickenburger.png" />
+    <None Remove="Images\Burger King_Hamburger.png" />
+    <None Remove="Images\Burger King_Whopper.png" />
+    <None Remove="Images\KFC_Boxmaster.png" />
+    <None Remove="Images\KFC_Chief Burger.png" />
+    <None Remove="Images\KFC_Twister.png" />
+    <None Remove="Images\Panda Express_Beijing Beef.png" />
+    <None Remove="Images\Panda Express_Fried Shrimps.png" />
+    <None Remove="Images\Panda Express_Orange Chicken.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\KFC_Boxmaster.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="FFDB.db" />
+    <EmbeddedResource Include="Images\Burger King_Chickenburger.png" />
+    <EmbeddedResource Include="Images\Burger King_Hamburger.png" />
+    <EmbeddedResource Include="Images\Burger King_Whopper.png" />
+    <EmbeddedResource Include="Images\KFC_Chief Burger.png" />
+    <EmbeddedResource Include="Images\KFC_Twister.png" />
+    <EmbeddedResource Include="Images\Panda Express_Beijing Beef.png" />
+    <EmbeddedResource Include="Images\Panda Express_Fried Shrimps.png" />
+    <EmbeddedResource Include="Images\Panda Express_Orange Chicken.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppShell.xaml.cs">
+      <DependentUpon>AppShell.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\DishesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DishPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\IngredientsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RestaurantsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
